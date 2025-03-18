@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js",
-    "test": "jest"
+    "start": "node index.js",
+    "test": "node node_modules/jest/bin/jest.js"
   },
   "keywords": [],
   "author": "",
