@@ -8,10 +8,11 @@ jobs:
       - checkout
       - run: npm install
       - run: npm test
+      - run: npm build 
       - persist_to_workspace:
           root: .
           paths:
-            - build
+            - build/
   deploy:
     docker:
       - image: amazon/aws-cli
