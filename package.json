@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node node_modules/jest/bin/jest.js --forceExit"
+    "test": "node node_modules/jest/bin/jest.js --forceExit",
+    "build": "echo 'No build step required'"
   },
   "keywords": [],
   "author": "",
