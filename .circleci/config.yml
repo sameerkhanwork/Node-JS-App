@@ -25,6 +25,11 @@ jobs:
       - checkout
       - attach_workspace:
           at: /workspace
+      - run:
+          name: Configure AWS Credentials
+          command: |
+            aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+            aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
       - run: aws s3 sync /workspace s3://my-artifacts-bucket-v1 --delete
 
 workflows:
