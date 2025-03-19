@@ -8,11 +8,13 @@ jobs:
       - checkout
       - run: npm install
       - run: npm test
-      - run: npm run build 
+      # - run: npm run build 
       - persist_to_workspace:
           root: .
           paths:
-            - build/
+            - index.js
+            - package.json
+            - node_modules/
   deploy:
     docker:
       - image: amazon/aws-cli
@@ -20,7 +22,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: /workspace
-      - run: aws s3 sync /workspace/build s3://my-artifacts-bucket-v1 --delete
+      - run: aws s3 sync /workspace s3://my-artifacts-bucket-v1 --delete
 
 workflows:
   version: 2
