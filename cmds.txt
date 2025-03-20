@@ -1,0 +1,500 @@
+   97  find shell-scripting/
+   98  clear
+   99  file shell-scripting/
+  100  head shell-scripting/day1
+  101  ls
+  102  head animals.txt 
+  103  cat animals.txt 
+  104  more animals.txt 
+  105  more -d animals.txt 
+  106  tail animals.txt 
+  107  cal
+  108  cal -y
+  109  ls -i
+  110  ls -i animals.txt 
+  111  which
+  112  history 
+  113  less animals.txt 
+  114  ls
+  115  cd shell-scripting/
+  116  ls
+  117  cd YT/
+  118  ls
+  119  less logs.txt 
+  120  cat *
+  121  cd ..
+  122  ls
+  123  cat day1/*
+  124  cat day2/*
+  125  cd -
+  126  cat logger.sh 
+  127  cd ~
+  128  ls
+  129  cd sameer
+  130  ls
+  131  cat animals.txt 
+  132  sed -n '1p' animals.txt 
+  133  vim food.txt
+  134  sed -n '1p' food.txt 
+  135  sed -n '1,5p' food.txt 
+  136  sed -n '2,5p' food.txt 
+  137  cat food.txt 
+  138  sed -n "2,5p" food.txt 
+  139  sed -n "3,6p" food.txt 
+  140  sed -n '$p' food.txt 
+  141  vim info.text
+  142  rm info.text
+  143  ls
+  144  cd shell-scripting/YT/
+  145  ls
+  146  cat data.txt 
+  147  sed -n 'India/p' data.txt 
+  148  sed -n '/India/p' data.txt 
+  149  sed -n e '2p' -e '5p' data.txt 
+  150  sed -n -e '2p' -e '5p' data.txt 
+  151  cd ~
+  152  cd sameer/shell-scripting/YT/
+  153  vim practice.sh
+  154  ./practice.sh 
+  155  vim practice.sh
+  156  ./practice.sh 
+  157  ./practice.sh 
+  158  ./practice.sh 
+  159  pwd
+  160  ls
+  161  grep ar
+  162  grep -i "for" loop.sh
+  163  grep "for" loop.sh
+  164  grep -i "for" YT
+  165  grep -i "for" ~/sameer/shell-scripting/YT/
+  166  grep -l "a" *
+  167  find arithmetic.sh 
+  168  find day1
+  169  cd ~
+  170  find arithmetic.sh 
+  171  cd -
+  172  find for
+  173  find loop
+  174  find loop.sh
+  175  PS
+  176  ps -a
+  177  top
+  178  sudo top
+  179  vim dltt
+  180  vim dltt
+  181  vim dltt
+  182  vim dltt
+  183  vim dltt
+  184  vim dltt
+  185  vim newdltt 
+  186  LA -I
+  187  LS -I
+  188  ls -i
+  189  rm -v dltt 
+  190  l
+  191  ls
+  192  history > history.txt
+  193  ls
+  194  cat history.txt 
+  195  history 1-50
+  196  history 1
+  197  more logs.txt 
+  198  wc history.txt 
+  199  wc -c history.txt 
+  200  wc -L
+  201  wc -L history.txt 
+  202  if [[ -e /etc/passwd ]]; then  exit 0; else exit 1; fi
+  203  echo $?
+  204  cd ~/sameer/shell-scripting/YT/
+  205  ./stringOperations.sh 
+  206  ./stringOperations.sh 
+  207  ./stringOperations.sh 
+  208  ./stringOperations.sh 
+  209  ./stringOperations.sh 
+  210  ./stringOperations.sh 
+  211  ./stringOperations.sh 
+  212  ./stringOperations.sh 
+  213  echo $!
+  214  echo $!
+  215  ./root_user_check.sh 
+  216  $UID
+  217  cat logs.txt 
+  218  ./function
+  219  ./functions.sh 
+  220  bash array.sh 
+  221  bash array.sh 
+  222  echo "hello" &> /dev/null
+  223  logger "Hey buddy"
+  224  at 12:57 PM
+  225  at 12:57 PM
+  226  at 12:57 PM
+  227  cd mohd.sameer
+  228  cd ..
+  229  cd ..
+  230  cd ..
+  231  pwd
+  232  ls -a
+  233  cd AppData/
+  234  ls
+  235  cd Local/Programs/
+  236  ls
+  237  cd Microsoft\ VS\ Code/
+  238  ls
+  239  cd bin/
+  240  pwd
+  241  CD ~
+  242  cd ~
+  243  cd ~
+  244  pwd
+  245  ls
+  246  cd sameer
+  247  ls
+  248  mkdir Git-repo2
+  249  cd Git-repo2
+  250  git --version
+  251  git init
+  252  ls
+  253  ls -a
+  254  git clone https://github.com/workHexaview/myrepo.git
+  255  git status
+  256  cd ~/sameer/docker-learning/
+  257  git clone https://github.com/docker/getting-started-app.git
+  258  git config --list
+  259  cd ~/sameer/
+  260  git remote add origin https://github.com/workHexaview/myrepo.git
+  261  mkdir new-repo-practice
+  262  cd new-repo-practice/
+  263  git init
+  264  ls
+  265  ls -a
+  266  git remote add origin https://github.com/workHexaview/myrepo.git
+  267  ls -a
+  268  git remote -v
+  269  git pull origin main
+  270  git fetch origin
+  271  pwd
+  272  cd ~/sameer/docker-learning/getting-started-app/
+  273  docker run -it --mount type=bind,src="/$(pwd)",target=/src ubuntu bash
+  274  docker ps
+  275  docker stop 4850be7cfef7
+  276  docker ps
+  277  docker run -dp 127.0.0.1:3000:3000     -w //app --mount type=bind,src="/$(pwd)",target=/app     node:18-alpine     sh -c "yarn install && yarn run dev"
+  278  docker ps
+  279  docker logs -f 54e8b93f58fa
+  280  docker ps
+  281  docker stop 54e8b93f58fa
+  282  docker build -t getting-started .
+  283  docker network create todo-app
+  284  docker run -d     --network todo-app --network-alias mysql     -v todo-mysql-data:/var/lib/mysql     -e MYSQL_ROOT_PASSWORD=secret     -e MYSQL_DATABASE=todos     mysql:8.0
+  285  docker run -d     --network todo-app --network-alias mysql     -v todo-mysql-data:/var/lib/mysql     -e MYSQL_ROOT_PASSWORD=secret     -e MYSQL_DATABASE=todos     mysql:8.0
+  286  docker exec -it <mysql-container-id> mysql -u root -p
+  287  docker ps
+  288  docker exec -it 619f6fcc1bd1 mysql -u root -p
+  289  docker run -it --network todo-app nicolaka/netshoot
+  290  docker run -dp 127.0.0.1:3000:3000   -w //app -v "/$(pwd):/app"   --network todo-app   -e MYSQL_HOST=mysql   -e MYSQL_USER=root   -e MYSQL_PASSWORD=secret   -e MYSQL_DB=todos   node:18-alpine   sh -c "yarn install && yarn run dev"
+  291  docker logs -f e8094661b395d2550014411b49120514c0e85c63a94587b56578cfe45c10ab0e
+  292  docker exec -it e8094661b395d2550014411b49120514c0e85c63a94587b56578cfe45c10ab0e mysql -p todos
+  293  docker ps
+  294  docker exec -it 619f6fcc1bd1 mysql -p todos
+  295  vim compose.yaml
+  296  docker run -dp 127.0.0.1:3000:3000   -w /app -v "$(pwd):/app"   --network todo-app   -e MYSQL_HOST=mysql   -e MYSQL_USER=root   -e MYSQL_PASSWORD=secret   -e MYSQL_DB=todos   node:18-alpine   sh -c "yarn install && yarn run dev"
+  297  vim compose.yaml
+  298  docker ps
+  299  docker rm -f e8094661b395
+  300  docker rm -f 619f6fcc1bd1
+  301  docker compose up -d
+  302  docker compose logs -f
+  303  docker ps
+  304  docker compose up -d
+  305  vim compose.yaml
+  306  vim compose.yaml
+  307  docker compose up -d
+  308  vim compose.yaml
+  309  docker compose logs -f
+  310  docker compose down
+  311  cd ~/sameer/docker-learning/
+  312  mkdir docker-compose-prac
+  313  mv docker-compose-prac composetest
+  314  ls
+  315  cd composetest/
+  316  vim app.py
+  317  vim requirements.txt
+  318  vim Dockerfile
+  319  vim compose.yaml
+  320  docker compose up
+  321  docker compose up
+  322  docker image ls
+  323  docker inspect composetest-web
+  324  docker inspect babd7eb4d5d0
+  325  docker ps
+  326  docker compose down
+  327  docker compose down
+  328  docker image ls
+  329  vim compose.yaml 
+  330  docker compose watch
+  331  docker compose down
+  332  vim infra.yaml
+  333  vim compose.yaml 
+  334  docker compose up
+  335  vim compose.yaml 
+  336  docker compose up
+  337  docker compose up -d
+  338  docker compose ps
+  339  docker compose down -d
+  340  docker compose down 
+  341  docker compose ps
+  342  docker compose stop
+  343  docker images
+  344  docker ps
+  345  cd ..
+  346  cd getting-started-app
+  347  docker image history
+  348  docker image history getting-started
+  349  docker image history getting-started-app
+  350  docker images
+  351  docker image history getting-started:latest
+  352  docker image history demo3322/getting-started
+  353  docker image history --no-trunc demo3322/getting-started
+  354  vim Dockerfile 
+  355  docker build -t getting-started .
+  356  docker images
+  357  docker run -dp :127.0.0.1:3000:3000 6c56f153660f
+  358  docker run -dp 127.0.0.1:3000:3000 6c56f153660f
+  359  docker rm -f 7edf528480aecef2a49d2532adc5da6ee8b5223dcf9451afd236663121ac8bbb
+  360  docker build -t getting-started .
+  361  docker images
+  362  docker run -dp 127.0.0.1:3000:3000 6c56f153660f
+  363  docker rm -f 3cf183d1b3bfeed42393a049877b0eca4abba1776610473960674bd22038fe53
+  364  cd ~/sameer/docker-learning/
+  365  cp getting-started-app/ .
+  366  cp -r getting-started-app/ .
+  367  cp -r getting-started-app/ ./new_app
+  368  docker pull mongo
+  369  docker pull mongo-express
+  370  docker images
+  371  docker rmi babd7eb4d5d0
+  372  docker rmi d1b74d48c3ec
+  373  docker rmi 73a79d404470
+  374  docker network
+  375  docker network ls
+  376  docker create network mongo-network
+  377  docker network create mongo-network
+  378  docker network ls
+  379  docker -t network ls
+  380  docker run -dp 27017:27017 --network mongo-network --name mongodb 	-e MONGO_INITDB_ROOT_USERNAME=admin 	-e MONGO_INITDB_ROOT_PASSWORD=secret 	mongo
+  381  docker logs e6e71c3b9ee87293be618bc54ec5dc5aefb946d9a02d450a954350a23b994a07
+  382  docker run -d
+  383  docker run -d /
+  384  docker run -dp 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=secret --net mongo-network --name mongo-express ME_CONFIG_MONGODB_SERVER=mongodb mongo-express        
+  385  docker run -dp 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=secret --net mongo-network --name mongo-express -e ME_CONFIG_MONGODB_SERVER=mongodb mongo-express        
+  386  docker logs ace0ee890c64125bbf80d1553978bd650ee37e517597f614fd75888e7cfaf8e3
+  387  docker images
+  388  \n
+  389  \|
+  390  docker network ls
+  391  docker ps
+  392  docker images
+  393  docker run -dp 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=secret --net mongo-network --name mongo-express -e ME_CONFIG_MONGODB_SERVER=mongodb mongo-express
+  394  docker logs mongodb
+  395  docker logs mongo-express
+  396  docker ps
+  397  docker stop mongodb
+  398  docker stop mongo-express
+  399  docker stop mongodb
+  400  docker ps
+  401  docker images
+  402  docker ps
+  403  exit
+  404  cd ~
+  405  cd sameer/docker-learning/
+  406  docker --version
+  407  docker run -it --name server1 piyushgargdev/networking-lab
+  408  ifconfig
+  409  docker run -it --name server1 piyushgargdev/networking-lab
+  410  docker login
+  411  docker run -it --name server1 piyushgargdev/networking-lab
+  412  sudo docker run -it --name server1 piyushgargdev/networking-lab
+  413  docker login --help
+  414  docker login -u sameerkhanwork
+  415  docker run -it --name server1 piyushgargdev/networking-lab
+  416  docker images
+  417  docker run -it --name server1 ubuntu
+  418  docker ps
+  419  docker stop server1
+  420  docker -it start
+  421  docker start
+  422  docker -it start server1
+  423  dockercstart server1
+  424  docker start server1
+  425  docker stop server1
+  426  docker run -it server1
+  427  docker os
+  428  docker ps
+  429  docker images
+  430  docker -it --name server1 ubuntu
+  431  docker ps -a
+  432  docker rm server1
+  433  docker -it --name server1 ubuntu
+  434  docker run -it --name server1 ubuntu
+  435  docker network ls
+  436  docker inspect bridge
+  437  docker inspect mongo-network
+  438  hostname -i
+  439  hostname --i
+  440  hostname -I
+  441  hostname --help
+  442   ip addr
+  443  hostname
+  444  dig
+  445  ifconfig
+  446  hostname --ip-address
+  447  hostname --help
+  448  hostname --version
+  449  nmcli
+  450  docker ps
+  451  ssh -i EC2tutorial.pem ec2-user@34.235.207.213
+  452   ssh -i EC2tutorial.pem ec2-user@34.235.207.213
+  453  curl https://www.google.com
+  454  curl https://jsonplaceholder.typicode.com/posts/1
+  455  docker run --network host -it python:3.9-slim bash
+  456  docker run --network host -it python:3.9-slim bash
+  457  docker ps
+  458  docker images
+  459  cd ~/sameer/docker-learning/
+  460  mkdir multi-stage
+  461  ls
+  462  cd 
+  463  cd ~
+  464  ls
+  465  cd sameer/
+  466  ls
+  467  history
+  468  cat /etc/os-release
+  469  cat /etc/os-release/
+  470  sudo su
+  471  netstat --help
+  472  netstat --tulpn
+  473  java --version
+  474  [200~docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+  475  docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+  476  docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+  477  docker ps
+  478  docker exec accab20db22a cat /var/jenkins_home/secrets/initialAdminPassword
+  479  sudo
+  480  ls -a
+  481  pwd
+  482  cd ~
+  483  ls
+  484  ls -a
+  485  cd .ssh/
+  486  ls
+  487  cat known_hosts
+  488  cat known_hosts.old
+  489  pip install pyyaml
+  490  python.exe -m pip install --upgrade pip
+  491  node --version
+  492  docker --version
+  493  docker run hello-world
+  494  pwd
+  495  cd ~
+  496  pwd
+  497  cd sameer/Circle\ CI/demo-app/
+  498  mkdir .circleci
+  499  touch config.yaml
+  500  mv config.yaml .circleci/
+  501  mkdir circleci-node-app && cd circleci-node-app
+  502  pwd
+  503  cd ~
+  504  cd sameer/
+  505  mkdir circleci-node-app && cd circleci-node-app
+  506  npm init -y
+  507  npm install express
+  508  vim index.js
+  509  npm install --save-dev jest supertest
+  510  vim index.test.js
+  511  ls
+  512  vim package.json 
+  513  mkdir .circleci
+  514  vim config.yml
+  515  git init
+  516  git status
+  517  git add .
+  518  git status
+  519  git commit -m "Initial commit"
+  520  git remote add origin https://github.com/sameerkhanwork/Node-JS-Project.git
+  521  git branch -M main
+  522  git push -u origin main
+  523  git config --list
+  524  git push --force origin main  
+  525  git status
+  526  git remote add origin https://github.com/sameerkhanwork/Node-JS-App.git
+  527  git branch -M main
+  528  git push -u origin main
+  529  git remote add origin https://github.com/sameerkhanwork/Node-JS-App.git
+  530  git add .
+  531  git commit -m "pushing "
+  532  git push -u origin main
+  533  git remote add origin https://github.com/sameerkhanwork/Node-JS-App.git
+  534  git remote -v
+  535  git remote set-url origin https://github.com/sameerkhanwork/Node-JS-App.git
+  536  git remote -v
+  537  git status
+  538  git push -u origin main
+  539  git push --force origin main
+  540  npm list --depth=0
+  541  git pull
+  542  git config --global user.name
+  543  git config --global user.email
+  544  git config --local user.name
+  545  git config --local user.email
+  546  git config --global user.name "Sameer Khan"
+  547  git config --global user.email "sameerkhanwork1@gmail.com"
+  548  git config --global user.name
+  549  git config --global user.email
+  550  git pull
+  551  git config --global user.email
+  552  node index.js
+  553  git status
+  554  git add .circleci/config.yml
+  555  git status
+  556  git commit -m "update config to store artifacts in s3"
+  557  git push
+  558  git add .circleci/config.yml
+  559  git commit -m "update config to store artifacts in s3"
+  560  git push
+  561  git add .circleci/config.yml
+  562  git commit -m "update config to store artifacts in s3"
+  563  git push
+  564  npm run
+  565  git add .
+  566  git commit -m "update package.json"
+  567  git push
+  568  npm run
+  569  git add .circleci/config.yml
+  570  git commit -m "Fix: Remove unnecessary build step in CircleCI"
+  571  git push origin main
+  572  git add .circleci/config.yml
+  573  git commit -m "Fix: Install tar in AWS CLI image for workspace support"
+  574  git push origin main
+  575  git add .circleci/config.yml
+  576  git commit -m "Fix: Configure AWS credentials in CircleCI"
+  577  git push origin main
+  578  node run
+  579  git add .circleci/config.yml 
+  580  git commit -m "removed tar"
+  581  git push
+  582  git add .circleci/config.yml 
+  583  git commit -m "removed tar"
+  584  git push
+  585  GIT LOG
+  586  git log
+  587  git add .circleci/config.yml 
+  588  git commit -m "add tar"
+  589  git push
+  590  node run
+  591  node start
+  592  node index.js
+  593  git add .circleci/config.yml 
+  594  git commit -m "REMOVED REDUNDANCY"
+  595  git push
+  596  history > cmds.txt
