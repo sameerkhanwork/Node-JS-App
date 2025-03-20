@@ -14,21 +14,24 @@ jobs:
           paths:
             - index.js
             - package.json
-            - node_modules/
+            # - node_modules/
   deploy:
     docker:
       - image: amazon/aws-cli
     steps:
       - run:
           name: Install tar
-          command: yum install -y tar gzip
+          command: yum install -y tar gzip #Amazon Linux (AWS CLI Docker image) uses yum for package management. Installing tar ensures that attach_workspace works.
       - attach_workspace:
           at: /workspace
       - run:
-          name: Configure AWS Credentials
-          command: |
-            aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-            aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+          name: Debug - Check workspace files
+          command: ls -R /workspace
+      # - run:
+      #     name: Configure AWS Credentials
+      #     command: |
+      #       aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+      #       aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
       - run: aws s3 sync /workspace s3://my-artifacts-bucket-v1 --delete
 
 workflows:
