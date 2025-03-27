@@ -39,7 +39,7 @@ jobs:
           name: Deploy to EC2
           command: |
             scp -i private_key.pem -r ~/workspace/* $AWS_EC2_USER@$AWS_EC2_HOST:/home/$AWS_EC2_USER/app
-            ssh -i private_key.pem $AWS_EC2_USER@$AWS_EC2_HOST \<< 'EOF'
+            ssh -i private_key.pem $AWS_EC2_USER@$AWS_EC2_HOST < 'EOF'
               cd /home/$AWS_EC2_USER/app
               npm install
               pm2 restart all || pm2 start npm --name "node-app" -- start
