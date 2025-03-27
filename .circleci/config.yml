@@ -14,26 +14,28 @@ jobs:
           paths:
             - index.js
             - package.json
-            # - node_modules/
+            - node_modules/
   deploy:
     docker:
-      - image: amazon/aws-cli
+      - image: circleci/python:3.8
     steps:
-      - run:
-          name: Install tar
-          command: yum install -y tar gzip #Amazon Linux (AWS CLI Docker image) uses yum for package management. Installing tar ensures that attach_workspace works.
+      - checkout
       - attach_workspace:
           at: /workspace
       - run:
-          name: Debug - Check workspace files
-          command: ls -R /workspace
-      # - run:
-      #     name: Configure AWS Credentials
-      #     command: |
-      #       aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-      #       aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-      - run: aws s3 sync /workspace s3://my-artifacts-bucket-v1 --delete
-
+          name: Add SSH Key
+          command: |
+            echo "$AWS_PRIVATE_KEY" > private_key.pem
+            chmod 600 private_key.pem
+      - run:
+          name: Deploy to EC2
+          command: |
+            scp -i private_key.pem -r /workspace/* $AWS_EC2_USER@$AWS_EC2_HOST:/home/$AWS_EC2_USER/app
+            ssh -i private_key.pem $AWS_EC2_USER@$AWS_EC2_HOST << 'EOF'
+              cd /home/$AWS_EC2_USER/app
+              npm install
+              pm2 restart all || pm2 start npm --name "node-app" -- start
+            EOF
 workflows:
   version: 2
   build_and_deploy:
