@@ -12,9 +12,10 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - index.js
-            - package.json
-            - node_modules/
+            - .
+            # - index.js
+            # - package.json
+            # - node_modules/
   deploy:
     docker:
       - image: cimg/python:3.8.4
