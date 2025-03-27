@@ -23,6 +23,14 @@ jobs:
       - attach_workspace:
           at: ~/workspace
       - run:
+          name: Disable SSH Host Key Checking
+          command: |
+            mkdir -p ~/.ssh
+            ssh-keyscan -H $AWS_EC2_HOST >> ~/.ssh/known_hosts
+      - run:
+          name: Check Workspace Contents
+          command: ls -la ~/workspace  # Debugging step
+      - run:
           name: Add SSH Key
           command: |
             echo "$AWS_PRIVATE_KEY" > private_key.pem
