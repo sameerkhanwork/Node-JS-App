@@ -17,7 +17,7 @@ jobs:
             - node_modules/
   deploy:
     docker:
-      - image: circleci/python:3.8
+      - image: cimg/python:3.8.4
     steps:
       - checkout
       - attach_workspace:
