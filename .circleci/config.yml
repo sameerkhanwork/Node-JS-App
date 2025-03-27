@@ -33,11 +33,13 @@ jobs:
       - run:
           name: Add SSH Key
           command: |
-            echo "$AWS_PRIVATE_KEY" | awk '{gsub(/\\n/,"\n")}1' > private_key.pem
+            echo "$AWS_PRIVATE_KEY" | base64 -d > private_key.pem
             chmod 600 private_key.pem
       - run:
           name: Deploy to EC2
           command: |
+            eval $(ssh-agent -s)
+            ssh-add private_key.pem
             scp -i private_key.pem -r ~/workspace/* $AWS_EC2_USER@$AWS_EC2_HOST:/home/$AWS_EC2_USER/app
             ssh -i private_key.pem $AWS_EC2_USER@$AWS_EC2_HOST \<< 'EOF'
               cd /home/$AWS_EC2_USER/app
