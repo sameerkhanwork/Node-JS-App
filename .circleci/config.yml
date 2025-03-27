@@ -38,8 +38,9 @@ jobs:
       - run:
           name: Deploy to EC2
           command: |
-            eval $(ssh-agent -s)
-            ssh-add private_key.pem
+            # eval $(ssh-agent -s)
+            # ssh-add private_key.pem
+            ssh -i private_key.pem $AWS_EC2_USER@$AWS_EC2_HOST "mkdir -p /home/$AWS_EC2_USER/app"
             scp -i private_key.pem -r ~/workspace/* $AWS_EC2_USER@$AWS_EC2_HOST:/home/$AWS_EC2_USER/app
             ssh -i private_key.pem $AWS_EC2_USER@$AWS_EC2_HOST \<< 'EOF'
               cd /home/$AWS_EC2_USER/app
